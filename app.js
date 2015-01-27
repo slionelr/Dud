@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var button = require('./routes/button')(dudButtonClick, dudButtonState);
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/button', button);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -56,5 +58,18 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var dudbtn = false;
+function dudButtonClick() {
+    console.log('Click on dud');
+    console.log('State before the click:' + dudbtn);
+    dudbtn = !dudbtn;
+    console.log('State after the click:' + dudbtn);
+    
+    return ({ success: true, state: dudButtonState() });
+}
+
+function dudButtonState() {
+    return dudbtn;
+}
 
 module.exports = app;
