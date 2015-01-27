@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+
+.btn {
+  background: #3498db;
+    
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 95%;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
