@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  h1= state
-  p The button state is: #{state}
+  h1 The button state is: #{state}
+  input(id='state',type='hidden',value='#{state}')
+  button#switch SwitchMe
+
+  script(src='/javascripts/dud.js')
