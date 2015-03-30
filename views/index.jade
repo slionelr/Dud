@@ -4,3 +4,11 @@ block content
   h1= title
   p Welcome to #{title}
   div#timer(class="clock")
+  div(ng-controller="DudController").clock
+    div.wrapper
+        knob(knob-data="hours", knob-options="options")
+        knob(knob-data="minutes", knob-options="options")
+        knob(knob-data="interval", knob-options="options")
+    button(ng-click="update()")
+        | Update
+

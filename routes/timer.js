@@ -106,8 +106,9 @@ function emergencyStop() {
 
 /* GET the time left */
 router.get('/', function(req, res, next) {
-    //var time = getTime();
-    res.send({ "dud": dud, "sched": sched });
+    var offDate = new Date(sched.on.start);
+    offDate.setMilliseconds(sched.off.end);
+    res.send({ "sched": { "onDate": sched.on.start, "offDate": offDate } });
 });
 
 router.post('/set', function(req, res, next) {
