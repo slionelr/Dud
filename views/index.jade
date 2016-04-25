@@ -1,14 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div#timer(class="clock")
-  div(ng-controller="DudController").clock
-    div.wrapper
-        knob(knob-data="hours", knob-options="options")
-        knob(knob-data="minutes", knob-options="options")
-        knob(knob-data="interval", knob-options="options")
-    button(ng-click="update()")
-        | Update
+    br
+    div#timer(class="clock")
+    div(ng-controller="DudController").clock
+        div.wrapper
+            div.row
+                knob(knob-data="interval", knob-options="options('interval')")
+            div.row
+                button.btn.btn-primary(ng-click="update()")
+                    | Update
+            div.row
+                span.label.label-default(id="startTimer", ng-bind="startTimer")
+            div.row
+                span.label.label-default(id="endTimer", ng-bind="endTimer")
 

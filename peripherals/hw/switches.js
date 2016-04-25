@@ -1,4 +1,5 @@
-var Gpio = require('onoff').Gpio;
+// var Gpio = require('onoff').Gpio;
+var Gpio = require('../../mock/onoff').Gpio;
 
 function Switches() {
     this.createSwitch = function(number) {
