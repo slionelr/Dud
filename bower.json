@@ -1,0 +1,35 @@
+{
+  "name": "Dud",
+  "description": "Control your boiler",
+  "main": "www",
+  "authors": [
+    "Lionel R. Saposnik <slionelr@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dud",
+    "boiler"
+  ],
+  "homepage": "https://github.com/slionelr/Dud",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.12.1",
+    "angular-knob": "~0.0.2",
+    "bootstrap": "~3.3.4",
+    "angular-moment": "~0.9.2",
+    "clockpicker": "~0.0.7",
+    "jquery-knob": "~1.2.11",
+    "moment": "~2.9.0",
+    "angular-resource": "^1.5.2",
+    "angular": "^1.5.2"
+  }
+}
