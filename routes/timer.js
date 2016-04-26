@@ -96,7 +96,7 @@ self.emergencyStop = function () {
 
 /* GET the times */
 router.get('/get', function(req, res, next) {
-    res.send({ "timer": sched.timer, "onDate": sched.on.start, "offDate": sched.off.end });
+    res.send({ "timer": sched.timer, "sched": { "onDate": sched.on.start, "offDate": sched.off.end }});
 });
 
 router.post('/set', function(req, res, next) {
