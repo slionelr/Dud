@@ -24,6 +24,7 @@ router.post('/click', function(req, res, next) {
     res.json({ isSuccess: success, state: state });
 });
 
+
 router.getDud = function () {
     return dud;
 }

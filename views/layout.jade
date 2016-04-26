@@ -21,7 +21,12 @@ html(ng-app="dudApp")
     nav.navbar.navbar-inverse.navbar-fixed-top
         div.container
             div.navbar-header
-                a.navbar-brand Dud FGT
+                a.navbar-brand(href="/") Dud FGT
+            div(id=navbar)
+                ul.nav.navbar-nav
+                    li
+                        a(href="/dud") Dud
+                        
         // #{title}
     div.wrapper.text-center
         block content
