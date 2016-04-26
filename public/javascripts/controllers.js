@@ -14,6 +14,7 @@ dudApp.controller('DudController', ['$scope', 'Timer', function ($scope, Timer) 
         $scope.endTimer = undefined;
         
         var dudTimer = Timer.get(function (timer) {
+            $scope.interval = timer.timer;
             $scope.startTimer = timer.sched.onDate;
             $scope.endTimer = timer.sched.offDate;
         });
