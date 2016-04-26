@@ -11,18 +11,12 @@ var dudApp = angular.module('dudApp', ['ui.knob', 'angularMoment', 'timerService
 dudApp.controller('DudController', ['$scope', 'Timer', function ($scope, Timer) {
         
         $scope.startTimer = undefined;
-        $scope.endTimer = undefined;    
-
-        var dudTimer = Timer.get();
-        console.log("dudTimer: " + dudTimer);
+        $scope.endTimer = undefined;
         
-        moment(moment(dudTimer.onDate))
-        
-        // dudTimer = dudTimer || { onDate: new Date() };
-        
-        // $scope.hours = dudTimer.onDate.getHours();
-        // $scope.minutes = dudTimer.onDate.getMinutes();
-        // $scope.interval = 20; // dudTimer.sched.interval
+        var dudTimer = Timer.get(function (timer) {
+            $scope.startTimer = timer.sched.onDate;
+            $scope.endTimer = timer.sched.offDate;
+        });
         
         $scope.options = function (cb) {
             return {
